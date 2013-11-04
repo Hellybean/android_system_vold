@@ -28,6 +28,10 @@ ifneq ($(TARGET_USE_CUSTOM_SECOND_LUN_NUM),)
 common_cflags += -DCUSTOM_SECOND_LUN_NUM=$(TARGET_USE_CUSTOM_SECOND_LUN_NUM)
 endif
 
+ifneq ($(KERNEL_EXFAT_MODULE_NAME),)
+  common_cflags += -DEXFAT_MODULE_NAME=\"$(KERNEL_EXFAT_MODULE_NAME)\"
+endif
+
 #common_cflags += -Werror
 
 common_src_files := \
